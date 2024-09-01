@@ -1,0 +1,70 @@
+{
+  "env": {
+      "browser": true,
+      "es6": true
+  },
+  "extends": [
+    "airbnb",
+  "airbnb/hooks",
+  "plugin:@typescript-eslint/recommended",
+  "plugin:react/recommended",
+  "plugin:jsx-a11y/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "*./tsconfig.json",
+    "ecmaFeatures": {
+      "tsx": true
+    }
+  },
+  "plugins": [
+    "import",
+    "jsx-a11y",
+    "react",
+    "react-hooks",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "linebreak-style": 0,
+    "no-console": 0,
+    "global-require": 0,
+    "react/require-default-props": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "no-param-reassign": 0,
+    "react/prop-types": "off", // If you're using TypeScript, prop-types are not needed
+    "@typescript-eslint/explicit-module-boundary-types": "off", // Allows you to skip explicit return types in TypeScript
+    "jsx-a11y/label-has-associated-control": [ 2, {
+      "required": {
+        "some": [ "nesting", "id" ]
+      }
+    }],
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }], // Only .tsx files for JSX
+    "import/extensions": [
+      "off",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-unresolved": "off", // TypeScript takes care of this
+    "react/react-in-jsx-scope": "off", // Not needed in Next.js
+    "react/jsx-props-no-spreading": "off", // Allowing spread props
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/prefer-default-export": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
