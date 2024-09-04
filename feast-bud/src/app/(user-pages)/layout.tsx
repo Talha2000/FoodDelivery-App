@@ -5,6 +5,7 @@ import "../globals.css";
 import { getUser } from "@/utils/supabase/queries";
 import { createClient } from "@/utils/supabase/server";
 import NavBar from "@/src/components/NavBar";
+import Footer from "@/src/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,13 +22,14 @@ export default async function RootLayout({
 
   const supabase = createClient();
   const user = await Promise.resolve(getUser(supabase));
-  console.log(user)
+
   return (
     <html lang="en">
       <body className={inter.className}>
         <ThemeProviders>
           <NavBar user={user}/>
           {children}
+          <Footer />
         </ThemeProviders>
       </body>
     </html>

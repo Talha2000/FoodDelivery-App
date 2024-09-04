@@ -23,8 +23,8 @@ export async function login(formData: FormData) {
 
   console.log('login success');
 
-  await revalidatePath('/home', 'layout');
-  return { success: true, redirectTo: '/home' };
+  await revalidatePath('/', 'layout');
+  return { success: true, redirectTo: '/' };
 }
 
 export async function signup(formData: FormData) {

@@ -1,4 +1,4 @@
-import '../home.css';
+import './home.css';
 import RecipeGrid from "@/src/components/RecipeGrid";
 
 export default async function Home() {
@@ -25,7 +25,7 @@ export default async function Home() {
         </div>
       </div>
     </section>
-    <section className="h-dvh bg-neutral-100 overflow-clip">
+    <section className="h-full bg-neutral-100 overflow-clip">
       <div className="flex flex-col justify-center items-center p-10 gap-10">
         <p className="text-3xl font-bold underline underline-offset-2">Most Popular</p>
         <RecipeGrid />        
