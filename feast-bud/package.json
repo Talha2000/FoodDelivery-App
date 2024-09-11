@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
-    "@eslint/js": "^9.9.1",
+    "@eslint/js": "^9.10.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -37,13 +37,15 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "14.2.7",
     "eslint-config-standard-with-typescript": "^43.0.1",
-    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.6.0",
-    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react": "^7.35.2",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "globals": "^15.9.0",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.5.4"
+    "typescript": "^5.6.2"
   }
 }
