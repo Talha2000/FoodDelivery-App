@@ -23,8 +23,10 @@ const buttonVariants = cva(
         addCart: 'bg-accentLight text-primary-foreground hover:bg-accentLight/70 mt-auto dark:bg-accentDark dark:hover:bg-white',
         themeToggle: 'text-white hover:bg-accentLight rounded-xl focus-visible:ring-0 focus-visible:ring-offset-0',
         userMenu: 'text-white hover:bg-accentLight rounded-xl',
-        signIn: 'bg-bgLight text-textLight hover:bg-white',
-        contact: 'hover:text-white hover:bg-accentLight',
+        signIn: 'bg-black text-white hover:bg-gray-100 hover:text-black dark:bg-white dark:text-black dark:hover:bg-gray-200',
+        contact: 'hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black',
+        viewBtn: 'bg-orange-800 text-white',
+        // viewRecipe: 'bg-[#f7f0e2] text-black border',
       },
       size: {
         default: 'h-10 px-4 py-2',

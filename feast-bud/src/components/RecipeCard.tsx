@@ -3,6 +3,7 @@
 import React, { useRef } from 'react';
 import { useInView } from 'framer-motion';
 import Link from 'next/link';
+import { Button } from './ui/button';
 
 export default function RecipeCard() {
   const ref = useRef(null);
@@ -26,7 +27,7 @@ export default function RecipeCard() {
           <p>Recipe Title</p>
           <p>Recipe Description</p>
           <p>Recipe Stars</p>
-          <button type="button" className="pt-4">View More </button>
+          <Button type="button" variant="viewBtn">View Recipe</Button>
         </div>
       </div>
     </Link>
