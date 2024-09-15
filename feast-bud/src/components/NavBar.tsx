@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import logo from '../../public/FeastBud-logo.png';
 import { SignOutButton } from './SignOutButton';
 import { ThemeToggle } from './ThemeToggle';
@@ -19,7 +19,7 @@ import {
 export default function NavBar({ user }: any) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  // const pathname = usePathname();
+  const pathname = usePathname();
   const router = useRouter();
 
   // const toggleSheet = () => {
@@ -43,9 +43,9 @@ export default function NavBar({ user }: any) {
 
   return (
     <nav className="bg-[#fffefc] dark:bg-[#0e0f11] overflow-hidden text-black dark:text-white">
-      <div className="flex mx-10">
+      <div className="flex mx-4 sm:mx-12">
         <div className="relative flex w-full items-center">
-          <div className="flex gap-20 items-center">
+          <div className="flex gap-12 items-center">
             <div className="flex items-center">
               <button className="relative w-20" type="button" onClick={() => router.push('/')}>
                 <Image
@@ -58,29 +58,29 @@ export default function NavBar({ user }: any) {
                   className="object-cover"
                 />
               </button>
-              <span className="hidden md:flex text-2xl">FeastBud</span>
+              <a href="/" className="hidden md:flex text-2xl">FeastBud</a>
             </div>
 
             <div className="hidden w-full md:flex md:w-auto" id="navbar-default">
-              <ul className="text-black dark:text-white font-medium flex flex-col p-4 md:p-0 mt-4 border md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+              <ul className="text-black dark:text-white font-medium flex flex-col p-4 md:p-0 mt-4 border md:flex-row md:space-x-6 rtl:space-x-reverse md:mt-0 md:border-0">
                 <li>
-                  <a href="/home" className="block py-2 px-3  bg-blue-700 rounded md:bg-transparent md:p-0 " aria-current="page">Home</a>
+                  <a href="/" className={`${pathname === '/' ? 'text-orange-500' : ''} block py-2 px-3 rounded-lg transition ease-in-out delay-50 hover:bg-neutral-200/50 md:p-2`} aria-current="page">Home</a>
                 </li>
                 <li>
-                  <a href="/recipes" className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0">Recipes</a>
+                  <a href="/recipes" className={`${pathname === '/recipes' ? 'text-orange-500' : ''} block py-2 px-3 rounded-lg transition ease-in-out delay-50 hover:bg-neutral-200/50 md:hover:bg-bg-gray-900 md:border-0 md:p-2`}>Recipes</a>
                 </li>
                 <li>
-                  <a href="/myPlanner" className="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0">My Planner</a>
+                  <a href="/myPlanner" className={`${pathname === '/myPlanner' ? 'text-orange-500' : ''} block py-2 px-3 rounded-lg transition ease-in-out delay-50 hover:bg-neutral-200/50 md:hover:bg-bg-gray-900 md:border-0 md:p-2`}>My Planner</a>
                 </li>
                 <li>
-                  <a href="/blogs" className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0">Blogs</a>
+                  <a href="/blogs" className={`${pathname === '/blogs' ? 'text-orange-500' : ''} block py-2 px-3 rounded-lg transition ease-in-out delay-50 hover:bg-neutral-200/50 md:hover:bg-bg-gray-900 md:border-0 md:p-2`}>Blogs</a>
                 </li>
               </ul>
             </div>
 
             {/* Theme toggle, contact and SignIn button for large screens */}
             <div className="absolute right-0 hidden lg:flex items-center space-x-3 xl:space-x-6 rtl:space-x-reverse">
-              <Link href="/#contact">
+              <Link href="/contact">
                 <Button variant="contact" size="contact" className="text-textNavLight">
                   Contact
                 </Button>

@@ -7,7 +7,7 @@ export default async function Home() {
   return (
     <>
       <section className="relative w-screen h-dvh custom-bg">
-        <div className="relative mx-4 sm:mx-12 pt-24 text-white">
+        <div className="relative mx-4 pt-14 sm:mx-12 sm:pt-24 text-white">
           <div className="p-2 relative rounded-xl">
             <h1 className="text-3xl md:text-5xl font-extrabold pb-6">
               Food Recipe
@@ -16,7 +16,7 @@ export default async function Home() {
               Helping you find the best recipes to fulfill your nutritional needs.
             </p>
 
-            <ul className="relative flex space-x-12 pt-8 text-xl font-bold">
+            <ul className="relative flex space-x-8 pt-4 text-xl font-bold">
               <li>
                 500+ Recipes
               </li>
@@ -29,7 +29,7 @@ export default async function Home() {
             </ul>
           </div>
         </div>
-        <div className="bottom-0 px-4 absolute left-1/2 right-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full sm:w-1/2">
+        <div className="bottom-0 px-4 absolute left-1/2 right-1/2 transform -translate-x-1/2 -translate-y-1/4 lg:-translate-y-1/2 w-full sm:w-2/3 lg:w-1/2">
           {/* make this into a seperate component */}
           <div className="relative p-4 space-y-4 bg-white rounded-xl opacity-80 shadow-md shadow-black">
             <RecipeSearchBar />

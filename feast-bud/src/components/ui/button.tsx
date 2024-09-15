@@ -24,7 +24,7 @@ const buttonVariants = cva(
         themeToggle: 'text-white hover:bg-accentLight rounded-xl focus-visible:ring-0 focus-visible:ring-offset-0',
         userMenu: 'text-white hover:bg-accentLight rounded-xl',
         signIn: 'bg-black text-white hover:bg-gray-100 hover:text-black dark:bg-white dark:text-black dark:hover:bg-gray-200',
-        contact: 'hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black',
+        contact: 'hover:bg-neutral-200 dark:hover:bg-neutral-200 dark:hover:text-black',
         viewBtn: 'bg-orange-800 text-white',
         // viewRecipe: 'bg-[#f7f0e2] text-black border',
       },
