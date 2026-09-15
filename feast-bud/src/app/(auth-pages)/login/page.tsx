@@ -1,26 +1,22 @@
-'use client';
+"use client";
 
-import { useRouter } from 'next/navigation';
-import { login } from '../../../actions/loginAction';
+import type { FormEvent } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { login } from "../../../actions/loginAction";
 
 export default function LoginPage() {
   const router = useRouter();
-  console.log('login rendered');
 
-  const handleSubmit = async (event: React.FormEvent) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const formData = new FormData(event.target as HTMLFormElement);
+    const formData = new FormData(event.currentTarget);
     const result = await login(formData);
-    console.log(result);
 
     if (result.success) {
-      // Redirect to the /home route
-      console.log('here');
       router.push(result.redirectTo);
     } else {
-      // Redirect to the error page
-      console.log('error here');
       router.push(result.redirectTo);
     }
   };
@@ -35,12 +31,8 @@ export default function LoginPage() {
         <input id="password" name="password" type="password" required />
       </div>
       <div>
-        <button type="button">
-          Log in
-        </button>
-        <button type="button">
-          Sign up
-        </button>
+        <button type="submit">Log in</button>
+        <Link href="/register">Sign up</Link>
       </div>
     </form>
   );

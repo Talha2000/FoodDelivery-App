@@ -1,48 +1,56 @@
 'use server';
 
-import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
-
-import { createClient } from '@/utils/supabase/server';
+// import { revalidatePath } from 'next/cache';
+// import { Redirect } from 'next';
 
 export async function login(formData: FormData) {
-  const supabase = createClient();
-
-  // type-casting here for convenience
-  // in practice, you should validate your inputs
-  const data = {
-    email: formData.get('email') as string,
-    password: formData.get('password') as string,
-  };
-
-  const { error } = await supabase.auth.signInWithPassword(data);
-
-  if (error) {
-    return { success: false, redirectTo: '/error' };
-  }
-
-  console.log('login success');
-
-  await revalidatePath('/', 'layout');
+  console.log('in login action', formData);
   return { success: true, redirectTo: '/' };
 }
 
-export async function signup(formData: FormData) {
-  const supabase = createClient();
+// import { revalidatePath } from 'next/cache';
+// import { redirect } from 'next/navigation';
 
-  // type-casting here for convenience
-  // in practice, you should validate your inputs
-  const data = {
-    email: formData.get('email') as string,
-    password: formData.get('password') as string,
-  };
+// import { createClient } from '@/utils/supabase/server';
 
-  const { error } = await supabase.auth.signUp(data);
+// export async function login(formData: FormData) {
+//   const supabase = createClient();
 
-  if (error) {
-    redirect('/error');
-  }
+//   // type-casting here for convenience
+//   // in practice, you should validate your inputs
+//   const data = {
+//     email: formData.get('email') as string,
+//     password: formData.get('password') as string,
+//   };
 
-  revalidatePath('/', 'layout');
-  redirect('/');
-}
+//   const { error } = await supabase.auth.signInWithPassword(data);
+
+//   if (error) {
+//     return { success: false, redirectTo: '/error' };
+//   }
+
+//   console.log('login success');
+
+//   await revalidatePath('/', 'layout');
+//   return { success: true, redirectTo: '/' };
+// }
+
+// export async function signup(formData: FormData) {
+//   const supabase = createClient();
+
+//   // type-casting here for convenience
+//   // in practice, you should validate your inputs
+//   const data = {
+//     email: formData.get('email') as string,
+//     password: formData.get('password') as string,
+//   };
+
+//   const { error } = await supabase.auth.signUp(data);
+
+//   if (error) {
+//     redirect('/error');
+//   }
+
+//   revalidatePath('/', 'layout');
+//   redirect('/');
+// }

@@ -1,16 +1,18 @@
-import React from 'react';
+import React from "react";
 
 interface Params {
-  params: {
-    id: string
-  }
+  params: Promise<{
+    id: string;
+  }>;
 }
 
-export default function page({ params }: Params) {
+export default async function Page({ params }: Params) {
+  const { id } = await params;
+
   return (
     <div className="h-dvh">
       The Recipe id is:
-      {params.id}
+      {id}
     </div>
   );
 }

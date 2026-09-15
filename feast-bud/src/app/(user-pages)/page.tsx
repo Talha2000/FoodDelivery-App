@@ -1,43 +1,60 @@
-import RecipeSearchBar from '@/src/components/RecipeSearchBar';
-import './home.css';
-import { Button } from '@/src/components/ui/button';
-import PopularSection from '@/src/components/PopularSection';
+import RecipeSearchBar from "@/src/components/RecipeSearchBar";
+import "./home.css";
+import { Button } from "@/src/components/ui/button";
+import PopularSection from "@/src/components/PopularSection";
+import Link from "next/link";
 
 export default async function Home() {
   return (
     <>
-      <section className="relative w-screen h-dvh custom-bg">
-        <div className="relative mx-4 pt-14 sm:mx-12 sm:pt-24 text-white">
-          <div className="p-2 relative rounded-xl">
-            <h1 className="text-3xl md:text-5xl font-extrabold pb-6">
-              Food Recipe
-            </h1>
-            <p className="text-2xl font-semibold">
-              Helping you find the best recipes to fulfill your nutritional needs.
+      <section className="relative min-h-[680px] w-full custom-bg lg:min-h-[800px]">
+        <div className="relative mx-0 max-w-none px-6 pb-48 pt-20 text-white sm:px-10 sm:pt-28 lg:px-14">
+          <div className="max-w-3xl">
+            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-orange-200">
+              A table full of possibilities
             </p>
-
-            <ul className="relative flex space-x-8 pt-4 text-xl font-bold">
-              <li>
-                500+ Recipes
-              </li>
-              <li>
-                300+ Cities
-              </li>
-              <li>
-                900+ Blogs
-              </li>
-            </ul>
+            <h1 className="max-w-2xl pb-6 text-4xl font-extrabold leading-[1.08] md:text-6xl">
+              Recipes for the way you really eat.
+            </h1>
+            <p className="max-w-xl text-lg leading-8 text-white/90 sm:text-xl">
+              From quick drinks and weeknight soups to slow, celebratory dishes,
+              find something worth putting on the table.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3 text-sm font-semibold text-white/90">
+              <span className="rounded-full border border-white/30 bg-black/20 px-4 py-2">
+                Quick and slow recipes
+              </span>
+              <span className="rounded-full border border-white/30 bg-black/20 px-4 py-2">
+                Comfort food classics
+              </span>
+              <span className="rounded-full border border-white/30 bg-black/20 px-4 py-2">
+                Ideas for every appetite
+              </span>
+            </div>
           </div>
         </div>
-        <div className="bottom-0 px-4 absolute left-1/2 right-1/2 transform -translate-x-1/2 -translate-y-1/4 lg:-translate-y-1/2 w-full sm:w-2/3 lg:w-1/2">
-          {/* make this into a seperate component */}
-          <div className="relative p-4 space-y-4 bg-white rounded-xl opacity-80 shadow-md shadow-black">
+        <div className="absolute bottom-8 left-1/2 w-full max-w-3xl -translate-x-1/2 px-4 sm:px-6">
+          <div className="relative space-y-4 rounded-3xl border border-orange-200 bg-orange-50/95 p-5 shadow-2xl shadow-black/30 backdrop-blur dark:border-[#45413d] dark:bg-[#24211e]/95 sm:p-6">
+            <div>
+              <p className="text-lg font-bold text-foreground">
+                What are you in the mood for?
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Search the collection by dish, ingredient, or occasion.
+              </p>
+            </div>
             <RecipeSearchBar />
-            <Button type="button" variant="viewBtn">View All</Button>
+            <Button
+              asChild
+              variant="viewBtn"
+              className="w-full bg-orange-700 shadow-sm hover:bg-orange-800 dark:bg-orange-500 dark:text-black dark:hover:bg-orange-400"
+            >
+              <Link href="/recipes">Explore the collection</Link>
+            </Button>
           </div>
         </div>
       </section>
-      <section className="h-full bg-neutral-100 overflow-clip">
+      <section className="min-h-screen overflow-clip bg-[#fffaf2] pt-12 text-foreground dark:bg-[#0a0a0a]">
         <PopularSection />
       </section>
     </>

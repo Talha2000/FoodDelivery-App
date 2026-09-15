@@ -1,13 +1,13 @@
-import { Copyright } from 'lucide-react';
-import React from 'react';
+import { Copyright } from "lucide-react";
+import React from "react";
 
 export default function Footer() {
   return (
-    <div className="bg-white dark:bg-gray-900 border-t-2">
-      <div className="flex py-4 mx-12 gap-2 text-gray-500">
-        <Copyright />
-        FeastBud 2024. All Rights Reserved
+    <footer className="border-t border-orange-100 bg-[#fffaf2] dark:border-[#222222] dark:bg-black">
+      <div className="flex w-full items-center justify-start gap-2 px-4 py-5 text-sm text-muted-foreground sm:px-12">
+        <Copyright className="h-4 w-4" aria-hidden="true" />
+        <span>FeastBud {new Date().getFullYear()}. All Rights Reserved</span>
       </div>
-    </div>
+    </footer>
   );
 }
